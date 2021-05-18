@@ -15,8 +15,16 @@
 
     .bg2{
         & > div{
+            background-repeat: repeat space;
             min-height: 100vh;
             background-color: #2F2F2F;
+        }
+        
+        .ABOUT__PAGE{
+            background: url('assets/img/circle.svg');
+            background-size: 20px;   
+            background-color: #2F2F2F;
+            // background-color: transparent; 
         }
     }
 }

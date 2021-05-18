@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div class="ABOUT__PAGE">
+  <div class="circle__pointer">
+      <div id="circle__pointer__id"></div>
+    </div>
   <div class="next-btn__bg">
     <router-link to="/portfolio"></router-link>
     <p>portfolio</p>
@@ -9,9 +12,6 @@
         <div class="social__media__icon">
           <a href="#" style="background-color: #4E545A;">
             <img  title="github" src="../assets/img/icons8-github.svg" alt="">
-          </a>
-          <a style="background-color: #ffffff" href="#">
-            <img title="gmail" src="../assets/img/icons8-gmail.svg" alt="">
           </a>
           <a style="background-color:#0077BA" href="#">
             <img title="linked In" src="../assets/img/icons8-linkedin-2.svg" alt="">
@@ -27,7 +27,17 @@
 
   <div id="SVG__container">
     <svg id="svg-anim" width="100%" height="100%" viewBox="0 0 994 780" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 579.713V197C3 193.134 6.13401 190 10 190H800.029C805.697 190 809.015 183.615 805.757 178.976L689.791 13.887C685.386 7.6153 692.813 -0.157605 699.279 3.95849L988.259 187.937C990.278 189.222 991.5 191.449 991.5 193.842V576.5C991.5 580.366 988.366 583.5 984.5 583.5H203.28C197.75 583.5 194.404 589.609 197.381 594.269L307.456 766.543C311.517 772.898 304.039 780.297 297.727 776.171L6.16974 585.572C4.19202 584.279 3 582.076 3 579.713Z" stroke="#FFFEFE50" stroke-width="1"/>
+      <path d="M3 579.713V197C3 193.134 6.13401 190 10 190H800.029C805.697 190 809.015 183.615 805.757 178.976L689.791 13.887C685.386 7.6153 692.813 -0.157605 699.279 3.95849L988.259 187.937C990.278 189.222 991.5 191.449 991.5 193.842V576.5C991.5 580.366 988.366 583.5 984.5 583.5H203.28C197.75 583.5 194.404 589.609 197.381 594.269L307.456 766.543C311.517 772.898 304.039 780.297 297.727 776.171L6.16974 585.572C4.19202 584.279 3 582.076 3 579.713Z" stroke="url(#paint0_radial)" stroke-width="1.5"/>
+      <defs>
+        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(992 -15) rotate(140.717) scale(1277.73 1561.24)">
+        <stop stop-color="#4854C9"/>
+        <stop offset="0.260417" stop-color="#9F52C4"/>
+        <stop offset="0.479167" stop-color="#CB56BC"/>
+        <stop offset="0.723958" stop-color="#E38E98"/>
+        <stop offset="1" stop-color="#FCC673"/>
+        <stop offset="1" stop-color="#FFFEFE" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
     </svg>
   </div>
 

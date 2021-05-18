@@ -40,9 +40,7 @@
         </div>
       </div>
     </div>
-    <div class="circle__pointer">
-      <div id="circle__pointer__id"></div>
-    </div>
+    
     <div class="bg2">
     <transition name="plate-right">
       <router-view></router-view>
