@@ -20,7 +20,7 @@ router.beforeEach(async (to, from, next) => {
       setTimeout(() => {
         $('.loading-animation').addClass('d-none');
         next()
-    }, 1500);
+    }, 0);
   }else{
     next();
   }

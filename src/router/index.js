@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Portfolio from '../views/Portfolio.vue'
 import PingPong from '../views/PingPong.vue'
 import Project from '../views/Project.vue'
+import About2 from '../views/About2.vue'
 
 Vue.use(VueRouter)
 
@@ -11,6 +12,11 @@ const routes = [
     path: '/',
     name: 'About',
     component: () => import('../views/About.vue')
+  },
+  {
+    path: '/about2',
+    name: 'About2',
+    component: About2
   },
   {
     path: '/portfolio',

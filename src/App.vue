@@ -42,9 +42,12 @@
     </div>
     
     <div class="bg2">
-    <transition name="plate-right">
+    <transition name="maskimg">
       <router-view></router-view>
     </transition>
+    <div class="test-sib"></div>
+    <div class="test-sib2"></div>
+
     </div>
     <div class="loading-animation loading-active d-none">
     </div>
@@ -55,6 +58,7 @@
 /*eslint-disable*/
 export default {
   mounted() {
+    
     VanillaTilt.init(document.querySelector(".tilt-btn__cnt"), {
           // max: 20,
           reverse:true,

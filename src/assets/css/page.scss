@@ -412,3 +412,82 @@
     top       : 45px;
     left      : 10px;
 }
+
+
+
+/* About New Page */
+.blobs {
+    filter  : url('#goo');
+    position: absolute;
+    pointer-events: none;
+    top     : 0;
+    left    : 0;
+    bottom  : 0;
+    right   : 0;
+}
+
+$dist-x:65px;
+$dist-y:65px;
+
+@keyframes blob-top-to-bottom {
+    0% {
+        top: 0%;
+    }
+
+    100% {
+        top: 100%
+    }
+}
+
+// $blob-color: #F2DA2D;
+$blob-color: #ececec;
+
+.blob {
+    position        : absolute;
+    // background   : #e97b7a;
+    // background   : #F2DA2D;
+    background      : $blob-color;
+    left            : var(--position, 50%);
+    width           : var(--size, 25px);
+    height          : var(--size, 25px);
+    top             : 50%;
+    line-height     : 100px;
+    text-align      : center;
+    color           : white;
+    font-size       : 40px;
+    border-radius   : 100%;
+    margin-top      : -50px;
+    margin-left     : -50px;
+    animation       : blob-top-to-bottom cubic-bezier(0, .85, 1, .15) 4s infinite;
+    animation-delay : var(--delay, 0s);
+}
+
+.center {
+    position           : absolute;
+    left               : 50%;
+    top                : 50%;
+    font-size          : 6rem;
+    text-align         : center;
+    transform          : translate(-50%, -50%);
+    // white-space: nowrap;
+    // font-family: 'Lobster', cursive;
+    font-family        : 'Pacifico', cursive;
+    color              : $blob-color;
+}
+
+@media (max-width: 500px) {
+    .center {
+        font-size: 4rem;
+    }
+}
+
+.contact__icons{
+    position: absolute;
+    bottom: 50px;
+    left: clamp(10px, 50px, 10vw);
+    a{
+        margin: 5px 15px 5px 0px;
+        color: $blob-color;
+        font-size: 2rem;
+    }
+}
