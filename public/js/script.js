@@ -3,6 +3,44 @@ $(document).ready(function (){
 })
 let bf;
 
+let WnResize = function (el, breakPoints){
+    this.el = el;
+    this.breakPoints = breakPoints || [];
+    this.init();
+}
+WnResize.prototype.init =  function(){
+    let that = this;
+    // console.log('kkkk');
+    that.resize();
+    window.addEventListener('resize', function (){
+        that.resize();
+    });
+}
+WnResize.prototype.resize = function(){
+    let that = this;
+    let width = window.innerWidth;
+    that.breakPoints.forEach(item => {
+        if(item.start < width && item.end > width){
+            document.querySelector(that.el)?.classList.add(item.className);
+        }else{
+            document.querySelector(that.el)?.classList.remove(item.className)
+        }   
+    });
+}
+
+new WnResize('body',[
+    {
+        start: 0,
+        end: 700,
+        className: 'mobile'
+    },
+    {
+        start: 700,
+        end: 5000,
+        className: 'desktop'
+    }
+])
+
 
 var TxtRotate = function(el, toRotate, period, dealy, repeat=false) {
   this.toRotate = toRotate;
@@ -212,3 +250,6 @@ MouseEffect.fn.mouseMove = function (cb){
 }
 
 let MVF = MouseEffect('#circle__pointer__id');
+
+
+

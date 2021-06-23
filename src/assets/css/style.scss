@@ -226,7 +226,7 @@ $masking-color: #ff975c;
 
 .maskimg-leave-active{
     // position: absolute;
-    z-index: 3;
+    z-index: 102;
     animation: test-2 $masking-leave linear forwards;
 }
 
@@ -253,7 +253,7 @@ $masking-color: #ff975c;
 .maskimg-enter-active{
     // display: none;
     opacity: 0;
-    z-index: 2;
+    z-index: 101;
     animation: test-2 $masking-enter linear forwards;
     animation-delay: $masking-leave;
     

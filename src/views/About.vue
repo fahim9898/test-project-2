@@ -9,15 +9,24 @@
       Fahim Sanghariyat
   </div>
   <div class="contact__icons">
-    <a href="#">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="#">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="#">
-      <i class="fab fa-instagram"></i>
-    </a>
+    <div class="items">
+      <a href="#">
+        <i class="fab fa-github"></i>
+      </a>
+      <div class="cst-tooltip">Github</div>
+    </div>
+    <div class="items">
+      <a href="#">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <div class="cst-tooltip">Linked In</div>
+    </div>
+    <div class="items">
+      <a href="#">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <div class="cst-tooltip">Instagram</div>
+    </div>
   </div>
     <div class="blobs">
         <div class="blob"></div>
@@ -87,18 +96,8 @@
         <div class="center">
             Fahim Sanghariyat
         </div>
-        <div class="contact__icons">
-          <a href="#">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
     </div>
+
     
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>

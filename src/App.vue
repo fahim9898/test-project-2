@@ -59,13 +59,6 @@
 export default {
   mounted() {
     
-    VanillaTilt.init(document.querySelector(".tilt-btn__cnt"), {
-          // max: 20,
-          reverse:true,
-          gyroscope: true,
-          gyroscopeMaxAngleX:  5,
-          // axis: 'x',
-    });
   }
 }
 </script>

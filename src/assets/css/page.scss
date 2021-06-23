@@ -1,3 +1,16 @@
+.mobile {
+    .page__cnt{
+        padding-left: 35px !important;
+        padding-right: 35px !important;
+    }
+    .next-btn__bg, .prev-btn__bg{
+        display: none;
+    }
+
+    .nav__cnt{
+        padding: 10px 55px !important;
+    }
+}
 .page__cnt {
     @extend .container;
     position: relative;
@@ -424,6 +437,7 @@
     left    : 0;
     bottom  : 0;
     right   : 0;
+    overflow: hidden;
 }
 
 $dist-x:65px;
@@ -485,9 +499,52 @@ $blob-color: #ececec;
     position: absolute;
     bottom: 50px;
     left: clamp(10px, 50px, 10vw);
-    a{
-        margin: 5px 15px 5px 0px;
-        color: $blob-color;
-        font-size: 2rem;
+    display: flex;
+    .items{
+        position: relative;
+        display: inline;
+        a{
+            margin: 0px 10px;
+            color: $blob-color;
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            i{
+                text-align: center;
+            }
+
+            &:hover + .cst-tooltip{
+                // display: block;
+                opacity: 1;
+                top: -30px;
+            }
+        }
+        .cst-tooltip{
+            // display: none;
+            pointer-events: none;
+            opacity: 0;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #2F2F2F;
+            font-size: 14px;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-weight: 700;
+            background-color: white;
+            white-space: nowrap;
+            transition: all 0.2s linear;
+            &::after{
+                content: '\f0d7';
+                font-family: 'Font Awesome 5 Free';
+                color: white;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 66%;
+                // bottom: 0px;
+            }
+        }
     }
 }
