@@ -5,7 +5,7 @@
     <p>portfolio</p>
   </div>
   
-  <div class="center">
+  <div class="center" data-speed="5">
       Fahim Sanghariyat
   </div>
   <div class="contact__icons">
@@ -93,7 +93,7 @@
         <div class="blob"></div>
         <div class="blob"></div>
         <div class="blob"></div>
-        <div class="center">
+        <div class="center" data-speed="5">
             Fahim Sanghariyat
         </div>
     </div>
@@ -115,7 +115,7 @@
 
 <script>
 /*eslint-disable*/
-import anime from 'animejs/lib/anime.es.js';
+// import anime from 'animejs/lib/anime.es.js';
 export default {
   mounted() {
      let blobs = [].slice.call(document.querySelector('.blobs').children);
@@ -126,7 +126,26 @@ export default {
           blob.style.setProperty('--position', -100 + Math.random() * 1600 + 'px');
           blob.style.setProperty('--size',0.2 + Math.random() * 2.5 + 'rem');
           blob.style.setProperty('--delay', -1 * (2 + Math.random() * 4) + 's');
-      })
+          blob.setAttribute('data-speed', (10 * Math.random() - 5) )
+      });
+
+
+      document.addEventListener('mousemove', function(e){
+        // let blobs = [].slice.call(document.querySelector('.blob'));
+        document.querySelectorAll('.blob').forEach(blob=>{
+          const speed = blob.getAttribute('data-speed');
+          const x = (window.innerWidth - e.pageX * speed)/100;
+          const y = (window.innerHeight - e.pageY * speed)/100;
+          blob.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        })
+        document.querySelectorAll('.center').forEach(blob=>{
+          const speed = 5;
+          const x = (window.innerWidth - e.pageX * speed)/100;
+          const y = (window.innerHeight - e.pageY * speed)/100;
+          blob.style.transform = `translateX(calc(-50% + ${x}px)) translateY(calc(-50% + ${y}px))`;
+          blob.style.transform = `translateX(calc(-50% + ${x}px)) translateY(calc(-50% + ${y}px))`;
+        })
+      });
   }
 }
 </script>
