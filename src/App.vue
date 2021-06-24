@@ -58,7 +58,37 @@
 /*eslint-disable*/
 export default {
   mounted() {
-    
+      let lastYPositonScroll = window.pageYOffset;
+
+      let PositiveVal = function (val){
+          if(val>=0) return val;
+          return -val;
+      }
+
+      function hasClass(el, className){
+        // let flag = false;
+        return ([].indexOf.call(document.querySelector(el)?.classList || [], className ) == 0)? true : false;
+      }
+
+      document.addEventListener('scroll', function (){
+          let newY = window.pageYOffset;
+          console.log('ANIMAION', lastYPositonScroll, newY)
+        if(hasClass('body', 'mobile') && PositiveVal(lastYPositonScroll - newY)> 400){
+            document.querySelector('body').classList.remove('fastScrollDownAnimation');
+            document.querySelector('body').classList.remove('fastScrollUpAnimation');
+            let diff = lastYPositonScroll - newY;
+            lastYPositonScroll = newY;
+            setTimeout(() => {
+                if( diff > 0){
+                    console.log('Animation Down')
+                    document.querySelector('body').classList.add('fastScrollDownAnimation')
+                }else{
+                    console.log('Animation Up')
+                    document.querySelector('body').classList.add('fastScrollUpAnimation')
+                }
+            }, 0);
+        }
+      })
   }
 }
 </script>

@@ -69,7 +69,7 @@ body{
 
 #nav {
     position: fixed;
-    top: -100%;
+    top: -110%;
     width: 100vw;
     height: 100vh;
     background-color: #333333;
@@ -222,7 +222,13 @@ body{
 $masking-leave: 0.8s;
 $masking-enter: 1.5s;
 // $masking-color: #daffb0;
-$masking-color: #ff975c;
+// $masking-color: #ff975c;
+// $masking-color: #184D47;  //Good1 GREEN;
+// $masking-color: #343A40; //Good2 GRAY;
+// $masking-color: #393E46; //good Gray 2;
+// $masking-color: #151515; //OP Dark Black;
+$masking-color: #1C1C1C;
+// $masking-color: #262626;
 
 .maskimg-leave-active{
     // position: absolute;
@@ -323,4 +329,31 @@ $masking-color: #ff975c;
 
 .test-sib,.test-sib2{
     min-height: 0px !important;
+}
+
+
+.fastScrollDownAnimation{
+    animation: fastScrollDownAnimation 0.4s linear;
+}
+
+@keyframes fastScrollDownAnimation{
+    50%{
+        transform:skewY(-5deg);
+    }
+    100%{
+        transform:skewY(0deg);
+    }
+}
+
+.fastScrollUpAnimation{
+    animation: fastScrollUpAnimation 0.4s linear;
+}
+
+@keyframes fastScrollUpAnimation{
+    50%{
+        transform:skewY(5deg);
+    }
+    100%{
+        transform:skewY(0deg);
+    }
 }

@@ -1,12 +1,13 @@
 <template>
   <div class="ABOUT__PAGE">
-  <div class="next-btn__bg">
-    <router-link to="/portfolio"></router-link>
-    <p>portfolio</p>
-  </div>
+  
   
   <div class="center" data-speed="5">
       Fahim Sanghariyat
+  </div>
+  <div class="next-btn__bg">
+    <router-link to="/portfolio"></router-link>
+    <p>portfolio</p>
   </div>
   <div class="contact__icons">
     <div class="items">
@@ -26,6 +27,14 @@
         <i class="fab fa-instagram"></i>
       </a>
       <div class="cst-tooltip">Instagram</div>
+    </div>
+    <div class="items nextBtn">
+      <router-link to="/portfolio">
+        <a href="#">
+          <i class="fas fa-chevron-right"></i>
+        </a>
+        <div class="cst-tooltip">Portfolio</div>
+      </router-link>
     </div>
   </div>
     <div class="blobs">

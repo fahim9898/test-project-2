@@ -10,6 +10,10 @@
     .nav__cnt{
         padding: 10px 55px !important;
     }
+    .items.nextBtn{
+        display: block !important;
+    }
+    
 }
 .page__cnt {
     @extend .container;
@@ -454,7 +458,9 @@ $dist-y:65px;
 }
 
 // $blob-color: #F2DA2D;
-$blob-color: #ececec;
+// $blob-color: #ececec;
+$blob-color: #e1e1e1;
+// $blob-color: #ff2424;
 
 .blob {
     position        : absolute;
@@ -502,7 +508,7 @@ $blob-color: #ececec;
     display: flex;
     .items{
         position: relative;
-        display: inline;
+        display: flex;
         a{
             margin: 0px 10px;
             color: $blob-color;
@@ -518,6 +524,12 @@ $blob-color: #ececec;
                 opacity: 1;
                 top: -30px;
             }
+        }
+
+        &.nextBtn{
+            display: none;
+            position: absolute;
+            left: calc(100% + 50px);
         }
         .cst-tooltip{
             // display: none;
