@@ -72,7 +72,6 @@ export default {
 
       document.addEventListener('scroll', function (){
           let newY = window.pageYOffset;
-          console.log('ANIMAION', lastYPositonScroll, newY)
         if(hasClass('body', 'mobile') && PositiveVal(lastYPositonScroll - newY)> 400){
             document.querySelector('body').classList.remove('fastScrollDownAnimation');
             document.querySelector('body').classList.remove('fastScrollUpAnimation');
