@@ -50,7 +50,7 @@
                 <div class="project__item col-12 mb-4">
                   <div class="main">
                     <div class="bar">
-                      <h1>Alpha-Zero</h1>
+                      <h1>{{project.title}}</h1>
                       <i></i>
                     </div>
                     <splide :options="options">
