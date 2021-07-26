@@ -13,12 +13,10 @@
         <section>
           <div class="portfolio">
             <div class="portfolio__header">
-              <span class="highlight" id="pos-1"> Alpha-Zero </span>
+              <span class="highlight" id="pos-1"> {{project.title}} </span>
             </div>
-            <div class="portfolio__sub-header">
-              Alpha zero is the game bot which plays
-              <span class="highlight"> Tic-Tac-Toe </span> game. A goal of the
-              bot is to beat humans in Tic-Tac-Toe.
+            <div class="portfolio__sub-header" v-html="project.sort_description">
+             
             </div>
           </div>
         </section>
@@ -26,15 +24,17 @@
         <section class="project">
           <ul class="project__header">
             <li>
+             <a :href="project.website_link" target="_blank" v-if="project.website_link" style="color: white;">
               <div class="tilt-btn info">
                 <div class="tilt-btn__cnt"> <i class="mr-2 fa fa-globe-asia"></i> Visit The Website</div>
                 <span></span>
               </div>
+              </a>
               <div></div>
             </li>
             <li>
               <div class="social__media__icon">
-                <a href="https://www.github.com">
+                <a :href="project.github_link" target="_blank" v-if="project.github_link">
                   <img
                     src="../assets/img/icons8-github.svg"
                     alt=""
@@ -54,22 +54,10 @@
                       <i></i>
                     </div>
                     <splide :options="options">
-                      <splide-slide>
+                      <splide-slide v-for='img in project.images' :key="img">
                         <img
                           class="img-height__single-project"
-                          src="../assets/img/alpha-zero-win.png"
-                        />
-                      </splide-slide>
-                      <splide-slide>
-                        <img
-                          class="img-height__single-project"
-                          src="../assets/img/alpha-zero-win.png"
-                        />
-                      </splide-slide>
-                      <splide-slide>
-                        <img
-                          class="img-height__single-project"
-                          src="../assets/img/alpha-zero-win.png"
+                          :src="img"
                         />
                       </splide-slide>
                     </splide>
@@ -84,16 +72,8 @@
           <span class="header highlight" id="pos-2">About Project</span>
           <div class="content">
             <ul class="not-decore">
-              <li>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even
-                slightly believable.<br><br> If you are going to use a passage of Lorem
-                Ipsum, you need to be sure there isn't anything embarrassing
-                hidden in the middle of text. All the Lorem Ipsum generators on
-                the Internet tend to repeat predefined chunks as necessary,
-                making this the first true generator on the Internet. It uses a
-                dictionary of over 200 Latin words,
+              <li v-html="project.about_project">
+                
               </li>
             </ul>
           </div>
@@ -102,11 +82,7 @@
           <span class="header highlight" id="pos-3">Technical Information</span>
           <div class="content">
             <ul class="">
-                <li>Vue JS</li>
-                <li>React JS</li>
-                <li>Feathers JS</li>
-                <li>Bootstrap</li>
-                <li>UI Design</li>
+                <li v-for="tech in project.tech_info" :key="tech">{{tech}}</li>
             </ul>
           </div>
         </section>
@@ -114,8 +90,7 @@
           <span class="header highlight">Resource</span>
           <div class="content">
             <ul>
-              <li>
-                Blog: <a class="highlight" href="https://www.google.com">https://www.google.com</a>
+              <li v-html="project.resorce">
               </li>
             </ul>
           </div>
@@ -136,22 +111,30 @@
 /*eslint-disable*/
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+
+import content from './content';
 export default {
   components: {
     Splide,
     SplideSlide,
   },
   mounted() {
-    $('.content').hover(function (){
-      $(this).prev().addClass('active');
-    },
-    function (){
-      $(this).prev().removeClass('active');
+    let p_id = this.$route.params.id;
+    this.project = content.projects.filter(p=>p.id==p_id)[0];
+    if(!this.project){
+      this.$router.push('/portfolio')
     }
+    $('.content').hover(function (){
+        $(this).prev().addClass('active');
+      },
+      function (){
+        $(this).prev().removeClass('active');
+      }
     )
   },
   data() {
     return {
+      project: null,
       options: {
         rewind: true,
         width: 800,

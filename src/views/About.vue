@@ -131,13 +131,14 @@ export default {
       // console.log(blobs)
       blobs.forEach(blob=>{
           // console.log(blob);
-          console.log(-5 + Math.random() * 110 + '%')
           blob.style.setProperty('--position', -100 + Math.random() * 1600 + 'px');
           blob.style.setProperty('--size',0.2 + Math.random() * 2.5 + 'rem');
           blob.style.setProperty('--delay', -1 * (2 + Math.random() * 4) + 's');
           blob.setAttribute('data-speed', (10 * Math.random() - 5) )
       });
 
+      
+      console.log(process.env.VUE_APP_NAME, "ENV")
 
       document.addEventListener('mousemove', function(e){
         // let blobs = [].slice.call(document.querySelector('.blob'));
@@ -155,6 +156,8 @@ export default {
           blob.style.transform = `translateX(calc(-50% + ${x}px)) translateY(calc(-50% + ${y}px))`;
         })
       });
+
+      window.dispatchEvent(new Event('mousemove'));
   }
 }
 </script>
